@@ -1,0 +1,24 @@
+# --- test-ha: runtime-данные Home Assistant, не код ---
+test-ha/config/.storage/
+test-ha/config/.cloud/
+test-ha/config/deps/
+test-ha/config/tts/
+test-ha/config/backups/
+test-ha/config/*.db
+test-ha/config/*.db-shm
+test-ha/config/*.db-wal
+test-ha/config/*.log
+test-ha/config/*.log.*
+test-ha/config/.HA_VERSION
+test-ha/config/secrets.yaml
+
+# --- секреты где угодно ---
+secrets.yaml
+*.token
+.env
+
+# --- мусор ОС/редакторов ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

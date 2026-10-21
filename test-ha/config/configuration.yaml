@@ -1,0 +1,21 @@
+# HA Lab — конфигурация тестового инстанса.
+# Здесь можно ломать что угодно: это не прод.
+
+# Стандартный набор интеграций (history, logbook, energy, mobile_app и т.д.)
+default_config:
+
+homeassistant:
+  # Каждый файл в packages/ — отдельная «подсистема» (helpers + automations + templates).
+  # Подробно разберём в Модуле 8.
+  packages: !include_dir_named packages
+
+logger:
+  default: info
+  # Пример точечного debug для одной интеграции:
+  # logs:
+  #   homeassistant.components.automation: debug
+
+# Файлы, в которые пишут UI-редакторы automations/scripts/scenes
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml

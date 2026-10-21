@@ -1,0 +1,22 @@
+# HA Lab — тестовый Home Assistant для обучения.
+# Запуск на Orange Pi 5 Pro (arm64, Debian/OMV + Docker):
+#   cd test-ha && docker compose up -d
+# UI: http://<IP_ORANGE_PI>:8124
+#
+# Порт 8124 (а не 8123) — чтобы не путать с продовым HA и не конфликтовать,
+# если на Orange Pi уже что-то слушает 8123.
+
+services:
+  ha-lab:
+    container_name: ha-lab
+    # Лучше закрепить ту же версию, что на проде (Settings → About),
+    # например ghcr.io/home-assistant/home-assistant:2026.10.X
+    image: ghcr.io/home-assistant/home-assistant:stable
+    restart: unless-stopped
+    ports:
+      - "8124:8123"
+    environment:
+      - TZ=Europe/Kyiv
+    volumes:
+      - ./config:/config
+      - /etc/localtime:/etc/localtime:ro

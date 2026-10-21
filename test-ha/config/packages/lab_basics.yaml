@@ -1,0 +1,40 @@
+# Учебные «заглушки» вместо реальных устройств.
+# Двигаешь слайдеры/переключатели в UI — и проверяешь шаблоны и automations
+# без риска для настоящего бойлера и инвертора.
+
+input_boolean:
+  lab_boiler:
+    name: "Lab: бойлер (заглушка розетки)"
+    icon: mdi:water-boiler
+  lab_grid:
+    name: "Lab: сеть есть"
+    icon: mdi:transmission-tower
+  lab_logger_online:
+    name: "Lab: связь с logger DEYE"
+    icon: mdi:wifi
+
+input_number:
+  lab_pv_power:
+    name: "Lab: PV мощность"
+    min: 0
+    max: 13000
+    step: 50
+    unit_of_measurement: W
+    mode: slider
+    icon: mdi:solar-power
+  lab_load_power:
+    name: "Lab: потребление дома"
+    min: 0
+    max: 15000
+    step: 50
+    unit_of_measurement: W
+    mode: slider
+    icon: mdi:home-lightning-bolt
+  lab_battery_soc:
+    name: "Lab: заряд батареи"
+    min: 0
+    max: 100
+    step: 1
+    unit_of_measurement: "%"
+    mode: slider
+    icon: mdi:battery
